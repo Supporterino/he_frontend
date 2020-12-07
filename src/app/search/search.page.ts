@@ -14,7 +14,7 @@ export class SearchPage implements OnInit {
   selectedSigns: Set<string> = new Set<string>();
   diseases: Disease[] = [];
 
-  constructor(private signsService: SignsService, private searchService: SearchService) {
+  constructor(public signsService: SignsService, private searchService: SearchService) {
   }
 
   ngOnInit() {

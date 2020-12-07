@@ -1,8 +1,8 @@
 {
-  "name": "he_frontend",
+  "name": "wehe_learning_app",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "WeHe Learning App",
+  "homepage": "https://wehe.roth-kl.de/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

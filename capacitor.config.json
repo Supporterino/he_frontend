@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "he_frontend",
+  "appName": "wehe_learning_app",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
