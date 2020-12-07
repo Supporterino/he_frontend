@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input #inputRefName (input)="setVarName($event.target.value)"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Anzeichen</ion-label>
+    <ion-input #inputRefSign (input)="setVarSign($event.target.value)"></ion-input>
+    <ion-icon name="add-outline" (click)="add(); inputRefSign.value = ''"></ion-icon>
+  </ion-item>
+  <ion-chip *ngFor="let sign of signs" (click)="remove(sign)">
+    <ion-label>{{sign}}</ion-label>
+    <ion-icon name="close-circle"></ion-icon>
+  </ion-chip>
+
+  <hr>
+
+  <ion-item>
+    <ion-label>Update</ion-label>
+    <ion-toggle [(ngModel)]="update"></ion-toggle>
+  </ion-item>
+
+  <hr>
+
+  <ion-button expand="block" solid large (click)="sendEntry(); inputRefSign.value = ''; inputRefName.value = ''">Hinzufügen</ion-button>
+</ion-content>

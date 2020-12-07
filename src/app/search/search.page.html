@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-chip *ngFor="let sign of selectedSigns" (click)="remove(sign)">
+    <ion-label>{{sign}}</ion-label>
+    <ion-icon name="close-circle"></ion-icon>
+  </ion-chip>
+
+  <hr>
+
+  <form [formGroup]="myForm" (ngSubmit)="submit()" novalidate>
+    <div class="ion-form-group">
+      <ion-auto-complete [dataProvider]="signsService" formControlName="sign" #searchBar></ion-auto-complete>
+    </div>
+    <ion-button type="submit" expand="block" solid large>
+        Add Sign
+    </ion-button>
+  </form>
+
+  <hr>
+
+  <ion-button expand="block" solid large (click)="search()">Search</ion-button>
+
+  <ion-list>
+    <app-disease-item *ngFor="let disease of diseases" [disease]="disease"></app-disease-item>
+  </ion-list>
+</ion-content>

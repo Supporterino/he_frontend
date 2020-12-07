@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <app-disease-item *ngFor="let disease of diseases" [disease]="disease"></app-disease-item>
+  </ion-list>
+</ion-content>
