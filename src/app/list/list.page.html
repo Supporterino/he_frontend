@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searching()"></ion-searchbar>
   <ion-list>
     <app-disease-item *ngFor="let disease of diseases" [disease]="disease"></app-disease-item>
   </ion-list>
