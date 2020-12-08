@@ -1,10 +1,77 @@
 <ion-card>
   <ion-card-header>
-      <ion-card-title>{{disease.name}}</ion-card-title>
+      <ion-card-title class="ion-text-center">{{disease.name}}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
     <ion-list>
+      <ion-item-divider>
+        <ion-label>Symptome</ion-label>
+      </ion-item-divider>
+
+      <ion-item lines="none">
+        <ion-label class="ion-text-wrap">{{ disease.signs.join(', ') }}</ion-label>
+      </ion-item>
+
+      <ion-item-divider>
+        <ion-label>Ursachen</ion-label>
+      </ion-item-divider>
+
+      <ion-item lines="none">
+        <ion-label class="ion-text-wrap">{{ disease.causes }}</ion-label>
+      </ion-item>
+
+      <ion-item-divider>
+        <ion-label>Komplikationen</ion-label>
+      </ion-item-divider>
+
+      <ion-item lines="none">
+        <ion-label class="ion-text-wrap">{{ disease.complications }}</ion-label>
+      </ion-item>
+
+      <ion-item-divider>
+        <ion-label>Therapie</ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label class="ion-text-wrap">{{ disease.therapy }}</ion-label>
+      </ion-item>
+    </ion-list>
+
+
+
+    <!--<h3>Symptome</h3>
+    <ion-list style="width: 100%;">
       <ion-item *ngFor="let sign of disease.signs">{{ sign }}</ion-item>
     </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label>Ursachen</ion-label>
+        <ion-text>{{disease.causes}}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Komplikationen</ion-label>
+        <ion-text>{{disease.complications}}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Therapie</ion-label>
+        <ion-text>{{disease.therapy}}</ion-text>
+      </ion-item>
+    </ion-list>-->
+    <!--<div class="flip-container" (click)="flip()" [class.flipped]="flipped">
+
+      <div class="flipper">
+  
+          <div class="front">
+              <ng-content select=".flash-card-front"></ng-content>
+              
+          </div>
+  
+          <div class="back">
+              <ng-content select=".flash-card-back"></ng-content>
+          </div>
+  
+      </div>
+  
+  </div>-->
   </ion-card-content>
 </ion-card>

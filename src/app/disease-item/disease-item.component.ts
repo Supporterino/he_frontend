@@ -8,9 +8,13 @@ import { Disease } from './disease.model';
 })
 export class DiseaseItemComponent implements OnInit {
   @Input() disease: Disease;
+  flipped: boolean = false;
 
   constructor() { }
 
   ngOnInit() {}
 
+  flip(){
+    this.flipped = !this.flipped;
+  }
 }

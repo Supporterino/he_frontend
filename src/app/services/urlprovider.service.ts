@@ -7,7 +7,7 @@ export class URLProviderService {
 
   constructor() { }
 
-  private url = 'http://webhost:9119';
+  private url = 'https://wehe.roth-kl.de';
   signs = `${this.url}/api/signs`;
   search = `${this.url}/api/possible_disease`;
   diseases = `${this.url}/api/get_disease`;

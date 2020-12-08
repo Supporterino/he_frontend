@@ -7,18 +7,29 @@
 <ion-content>
   <ion-item>
     <ion-label>Name</ion-label>
-    <ion-input #inputRefName (input)="setVarName($event.target.value)"></ion-input>
+    <ion-input #inputRefName clearInput (input)="setVarName($event.target.value)"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>Anzeichen</ion-label>
-    <ion-input #inputRefSign (input)="setVarSign($event.target.value)"></ion-input>
+    <ion-input enterkeyhint="enter" #inputRefSign (keypress)="eventHandler($event)" (input)="setVarSign($event.target.value)"></ion-input>
     <ion-icon name="add-outline" (click)="add(); inputRefSign.value = ''"></ion-icon>
   </ion-item>
   <ion-chip *ngFor="let sign of signs" (click)="remove(sign)">
     <ion-label>{{sign}}</ion-label>
     <ion-icon name="close-circle"></ion-icon>
   </ion-chip>
-
+  <ion-item>
+    <ion-label>Ursachen</ion-label>
+    <ion-input #inputRefCauses clearInput (input)="setVarCauses($event.target.value)"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Komplikationen</ion-label>
+    <ion-input #inputRefComps clearInput (input)="setVarComps($event.target.value)"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Behandelung</ion-label>
+    <ion-input #inputRefTherapy clearInput (input)="setVarTherapy($event.target.value)"></ion-input>
+  </ion-item>
   <hr>
 
   <ion-item>
@@ -28,5 +39,5 @@
 
   <hr>
 
-  <ion-button expand="block" solid large (click)="sendEntry(); inputRefSign.value = ''; inputRefName.value = ''">Hinzufügen</ion-button>
+  <ion-button expand="block" solid large (click)="sendEntry(); inputRefSign.value = ''; inputRefName.value = ''; inputRefCauses.value = ''; inputRefComps.value = ''; inputRefTherapy.value = '';">Hinzufügen</ion-button>
 </ion-content>
