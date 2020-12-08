@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Search</ion-title>
+    <ion-title>Suchen</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,13 +17,13 @@
       <ion-auto-complete [dataProvider]="signsService" formControlName="sign" #searchBar></ion-auto-complete>
     </div>
     <ion-button type="submit" expand="block" solid large>
-        Add Sign
+        Anzeichen hinzufügen
     </ion-button>
   </form>
 
   <hr>
 
-  <ion-button expand="block" solid large (click)="search()">Search</ion-button>
+  <ion-button expand="block" solid large (click)="search()">Suchen</ion-button>
 
   <ion-list>
     <app-disease-item *ngFor="let disease of diseases" [disease]="disease"></app-disease-item>
