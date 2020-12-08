@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searching()"></ion-searchbar>
+  <ion-searchbar type="text" debounce="50" animated placeholder="Suchen ..." [(ngModel)]="searchTerm" (ionChange)="searching()" clearInput></ion-searchbar>
   <ion-list>
     <app-disease-item *ngFor="let disease of diseases" [disease]="disease"></app-disease-item>
   </ion-list>

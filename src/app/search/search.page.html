@@ -12,7 +12,11 @@
 
   <hr>
 
-  <form [formGroup]="myForm" (ngSubmit)="submit()" novalidate>
+  <ion-searchbar type="text" debounce="50" animated placeholder="Suchen ..." (ionChange)="searchList($event)" clearInput></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let sign of signs" (click)="select(sign)">{{sign}}</ion-item>
+  </ion-list>
+  <!--<form [formGroup]="myForm" (ngSubmit)="submit()" novalidate>
     <div class="ion-form-group">
       <ion-auto-complete [dataProvider]="signsService" formControlName="sign" #searchBar></ion-auto-complete>
     </div>
@@ -20,7 +24,7 @@
         Anzeichen hinzufügen
     </ion-button>
   </form>
-
+-->
   <hr>
 
   <ion-button expand="block" solid large (click)="search()">Suchen</ion-button>
