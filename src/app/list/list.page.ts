@@ -19,16 +19,16 @@ export class ListPage implements OnInit {
 
   ionViewWillEnter() {
     this.searchService.getAllDiseases().subscribe(data => {
-      this.diseasesStore = data.sort((a,b ) => {
+      this.diseasesStore = data.sort((a, b) => {
         return (a.name.toLowerCase() < b.name.toLowerCase()) ? -1 : (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : 0;
       });
       this.searching();
-    })
+    });
   }
 
   searching() {
     this.diseases = this.diseasesStore.filter(item => {
       return item.name.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1;
-    })
+    });
   }
 }

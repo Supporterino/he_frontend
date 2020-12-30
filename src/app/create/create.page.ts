@@ -10,11 +10,11 @@ import { Disease } from '../disease-item/disease.model';
 })
 export class CreatePage implements OnInit {
   signs: Set<string> = new Set<string>();
-  valueSign: string = "";
-  valueName: string = "";
-  vauleCauses: string = "";
-  valueComps: string = "";
-  valueTherapy: string = "";
+  valueSign: string = '';
+  valueName: string = '';
+  vauleCauses: string = '';
+  valueComps: string = '';
+  valueTherapy: string = '';
   update: boolean = false;
   input: any;
   @ViewChild('inputRefSign') set playerRef(ref: ElementRef<IonInput>) {
@@ -27,8 +27,6 @@ export class CreatePage implements OnInit {
   }
 
   ionViewWillEnter() {
-    //this.signs = new Set<string>();
-    //this.value = "";
   }
 
   setVarSign(inp) {
@@ -61,12 +59,12 @@ export class CreatePage implements OnInit {
 
   reset() {
     this.signs = new Set<string>();
-    this.valueName = "";
-    this.valueSign = "";
+    this.valueName = '';
+    this.valueSign = '';
     this.update = false;
-    this.vauleCauses = "";
-    this.valueComps = "";
-    this.valueTherapy = "";
+    this.vauleCauses = '';
+    this.valueComps = '';
+    this.valueTherapy = '';
   }
 
   sendEntry() {
@@ -80,28 +78,25 @@ export class CreatePage implements OnInit {
 
     if (this.update) {
       this.searchService.updateDisease(data).subscribe(res => {
-        //console.log(res);
         if (res.msg.startsWith('Error')) this.presentToast('Failed to updating disease.');
-        else this.presentToast(`${this.valueName} updated.`)
+        else this.presentToast(`${this.valueName} updated.`);
         this.reset();
-      })
+      });
     } else {
       this.searchService.sendNewDisease(data).subscribe(res => {
-        //console.log(res);
         if (res.msg.startsWith('Error')) this.presentToast('Failed to create disease.');
-        else this.presentToast(`${this.valueName} created.`)
-        this.reset()
-      })
+        else this.presentToast(`${this.valueName} created.`);
+        this.reset();
+      });
     }
   }
 
   eventHandler(event) {
-    //console.log(event, event.keyCode);
     if (event.keyCode === 13) {
       this.add();
-      this.input.value = "";
+      this.input.value = '';
     }
-  } 
+  }
 
   async presentToast(message: string) {
     const toast = await this.toastController.create({

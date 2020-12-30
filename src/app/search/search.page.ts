@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SignsService } from '../services/signs.service';
 import { SearchService } from '../services/search.service';
-import {FormGroup, Validators, FormControl } from '@angular/forms'
+import { FormGroup, Validators, FormControl } from '@angular/forms'
 import { Disease } from '../disease-item/disease.model';
 
 @Component({
@@ -24,7 +24,7 @@ export class SearchPage implements OnInit {
       sign: new FormControl('', [
         Validators.required
       ])
-    })
+    });
   }
 
   ionViewWillEnter() {
@@ -43,7 +43,7 @@ export class SearchPage implements OnInit {
     if (val && val.trim != '') {
       this.signs = this.signs.filter(e => {
         return (e.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
+      });
     } else {
       this.signs = [];
     }

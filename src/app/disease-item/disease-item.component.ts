@@ -12,7 +12,7 @@ export class DiseaseItemComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   flip(){
     this.flipped = !this.flipped;

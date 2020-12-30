@@ -19,4 +19,4 @@ import { ComponentProviderModule } from '../component-provider/component-provide
   ],
   declarations: [ListPage]
 })
-export class ListPageModule {}
+export class ListPageModule { }

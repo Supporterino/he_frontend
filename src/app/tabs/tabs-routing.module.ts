@@ -9,15 +9,15 @@ const routes: Routes = [
     children: [
       {
         path: 'search',
-        loadChildren: () => import('../search/search.module').then( m => m.SearchPageModule)
+        loadChildren: () => import('../search/search.module').then(m => m.SearchPageModule)
       },
       {
         path: 'create',
-        loadChildren: () => import('../create/create.module').then( m => m.CreatePageModule)
+        loadChildren: () => import('../create/create.module').then(m => m.CreatePageModule)
       },
       {
         path: 'list',
-        loadChildren: () => import('../list/list.module').then( m => m.ListPageModule)
+        loadChildren: () => import('../list/list.module').then(m => m.ListPageModule)
       },
       {
         path: '',
@@ -37,4 +37,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

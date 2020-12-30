@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaderResponse} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { URLProviderService } from './urlprovider.service';
 import { Disease } from '../disease-item/disease.model';
 import { ResponseMessage } from './response.model';
